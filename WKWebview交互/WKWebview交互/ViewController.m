@@ -42,7 +42,6 @@
 
 - (void)createWebView{
     
-    
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) configuration:config];
     webView.navigationDelegate = self;
@@ -61,6 +60,10 @@
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     NSURL *url = [[NSURL alloc] initWithString:filePath];
     [self.webView loadHTMLString:htmlString baseURL:url];
+    
+//    加载线上web
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: @"https://www.jianshu.com/p/6ec9571a0105"]];
+//    [webView loadRequest:request];
 }
 
 
